@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestTamTam.Models
+namespace MovieTraier.Models
 {
     public class Movie
     {

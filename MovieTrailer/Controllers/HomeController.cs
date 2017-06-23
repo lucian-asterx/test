@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
-using TestTamTam.Services;
+using MovieTraier.Models;
+using MovieTraier.Services;
 
-namespace TestTamTam.Controllers
+namespace MovieTraier.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,9 +15,15 @@ namespace TestTamTam.Controllers
             _moviesRepository = moviesRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var result = await _moviesRepository.GetMoviesByTitle("love");
+            return View(Enumerable.Empty<Movie>());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(string title)
+        {
+            var result = await _moviesRepository.GetMoviesByTitle(title);
 
             return View(result);
         }

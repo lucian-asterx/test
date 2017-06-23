@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestTamTam.Models
+namespace MovieTraier.Models
 {
     public class Trailer
     {

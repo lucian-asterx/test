@@ -16,7 +16,7 @@ namespace MoviesAPI.Utilities
     public class CacheProvider<T> : ICacheProvider<T>
     {
         private readonly Dictionary<string, IEnumerable<T>> _internalCacheDictionary;
-        private TimeSpan _cacheLifeDuration = new TimeSpan(0, 2, 0);
+        private TimeSpan _cacheLifeDuration = new TimeSpan(0, 10, 0);
         private Timer _internalLifeTimer;
 
         public CacheProvider()

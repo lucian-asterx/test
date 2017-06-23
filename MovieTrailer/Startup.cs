@@ -4,9 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using System.IO;
-using TestTamTam.Services;
+using MovieTraier.Services;
 
-namespace TestTamTam
+namespace MovieTraier
 {
     public class Startup
     {

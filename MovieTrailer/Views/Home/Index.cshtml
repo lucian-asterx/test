@@ -7,54 +7,81 @@
         width: 320px;
         margin: 10px;
         display: inline-table;
-        background: #e8e6e6
+        background: #e8e6e6;
+        border-radius: 3px;
+    }
+
+    .search-control {
+        margin-left: 25px;
+    }
+
+    .search-input {
+        width: 800px;
     }
 
     .card-title {
-        margin: 0px 0px 10px 15px;
+        margin: 0 0 10px 15px;
     }
 
         .card-title span {
             font-size: 16px;
         }
+
+    .movie-title {
+        margin-left: 25px;
+    }
+
+    .social-media {
+        position: absolute;
+        right: 16px;
+        bottom: 10px;
+    }
 </style>
 
-<form action="#">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-            <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="sample6">
-            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+@using (Html.BeginForm())
+{
+    <div class="search-control mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="title" name="title">
+            <label class="mdl-textfield__label" for="title">Movie name</label>
         </div>
     </div>
-</form>
-
-@if (!Model.Any())
-{
-    <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
 }
 
 @foreach (var movie in Model)
 {
-    <p>@movie.Title</p>
+    <br />
+    <li class="movie-title">@movie.Title</li>
 
     foreach (var trailer in movie.Trailers)
     {
 
         <div class="card-square mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
-                <img src="@trailer.ThumbnailUrl" />
+                <iframe width="320" height="180" src="https://www.youtube.com/embed/@trailer.VideoId"></iframe>
+
+                @*<a href="https://www.youtube.com/watch?v=@trailer.VideoId" target="_blank"><img src="@trailer.ThumbnailUrl" /></a>*@
             </div>
             <div class="card-title mdl-card__title-text">
                 <span class="mdl-card__title-text">@movie.Title</span>
+                <div class="social-media">
+                    <a href="https://twitter.com/share"
+                       class="twitter-share-button"
+                       data-url="https://www.youtube.com/watch?v=@trailer.VideoId"
+                       data-show-count="false"></a>
+
+                    <div class="fb-share-button"
+                         data-href="https://www.youtube.com/watch?v=@trailer.VideoId"
+                         data-layout="button"
+                         data-size="small"
+                         data-mobile-iframe="false">
+
+                        <a class="fb-xfbml-parse-ignore"
+                           target="_blank"
+                           href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Faaa%2F&amp;src=sdkpreparse"></a>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        @*<iframe width="320" height="180" src="https://www.youtube.com/embed/@trailer.VideoId"></iframe>*@
-
-        @*<a href="https://www.youtube.com/watch?v=@trailer.VideoId" target="_blank"><img src="@trailer.ThumbnailUrl" /></a>*@
     }
 }
