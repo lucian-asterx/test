@@ -1,6 +1,7 @@
-TestTamTam/obj/
 MoviesAPI/bin/
-TestTamTam/node_modules/
-TestTamTam/bin/
 MoviesAPI/obj/
 *.suo
+MovieTrailer/bin/
+MovieTrailer/node_modules/
+MovieTrailer/obj/
+*.user
