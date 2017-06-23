@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTamTam", "TestTamTam\TestTamTam.csproj", "{1D15AFB9-ED0E-4A09-A543-0A541CD0D7C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTrailer", "MovieTrailer\MovieTrailer.csproj", "{1D15AFB9-ED0E-4A09-A543-0A541CD0D7C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesAPI", "MoviesAPI\MoviesAPI.csproj", "{EB685F7A-C3A8-4105-9343-56330F148C0D}"
 EndProject
