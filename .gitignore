@@ -1,0 +1,6 @@
+TestTamTam/obj/
+MoviesAPI/bin/
+TestTamTam/node_modules/
+TestTamTam/bin/
+MoviesAPI/obj/
+*.suo
